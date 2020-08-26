@@ -1,0 +1,4 @@
+@include zoom-in-animation('top', scaleY(0), scaleY(1), center top);
+@include zoom-in-animation('right', scaleX(.45), scaleX(1),  right);
+@include zoom-in-animation('bottom', scaleY(.45), scaleY(1), center bottom);
+@include zoom-in-animation('left', scaleX(0), scaleX(1), left);

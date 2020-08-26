@@ -1,0 +1,38 @@
+.auto-autoComplete {
+    position: relative;
+
+    >ul {
+        color           : $input-group-addon-color;
+        background-color: $input-bg;
+        border          : $input-group-addon-border-color;
+        transition      : $input-transition;
+        border-radius   : $input-border-radius;
+        box-shadow      : $input-box-shadow;
+        position        : absolute;
+        top             : 3rem;
+        left            : 0;
+        right           : 0;
+
+        >svg {
+            text-align: center;
+            width     : 100% !important;
+        }
+    }
+
+    li {
+        white-space  : nowrap;
+        text-overflow: ellipsis;
+        overflow     : hidden;
+        cursor       : pointer;
+        width        : 100%;
+        padding      : $autoComplete-item-padding-x $autoComplete-item-padding-y;
+
+        &:hover {
+            background-color: $autoComplete-item-hover;
+        }
+
+        &.autoComplete-item-hover {
+            background-color: $autoComplete-item-hover;
+        }
+    }
+}

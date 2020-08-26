@@ -1,0 +1,71 @@
+.auvo-menu {
+    display      : flex;
+    border-bottom: $menu-border-width solid $menu-border-color;
+    box-shadow   : $menu-box-shadow;
+    margin-left  : 1rem;
+
+    &.auvo-menu-column {
+        flex-direction: column;
+
+        .auvo-menu-item-active {
+            border-bottom-color: transparent;
+            border-left-color  : $menu-item-active-color;
+        }
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .auvo-menu-disabled {
+        color         : $menu-item-disabled-color;
+        cursor        : not-allowed;
+        pointer-events: none;
+    }
+
+    .auvo-menu-item-active {
+        color              : $menu-item-active-color;
+        border-bottom-color: $menu-item-active-color;
+    }
+}
+
+.auvo-menu-item {
+    cursor    : pointer;
+    color     : $body-color;
+    padding   : $menu-item-padding-y $menu-item-padding-x;
+    transition: $menu-transition;
+    padding   : $menu-item-padding-y $menu-item-padding-x;
+    border    : $menu-item-active-border-width solid transparent;
+}
+
+.auvo-submenu {
+    position: relative;
+
+    .auvo-submenu-title-icon {
+        margin-left: .4rem;
+        transition : .3s linear;
+        transform  : rotate(0);
+
+        &.auvo-submenu-title-rotate {
+            transform: rotate(180deg);
+        }
+    }
+
+    &.auvo-submenu-row {
+        .auvo-menu-item-active {
+            border-bottom-color: transparent;
+            border-left-color  : $menu-item-active-color;
+        }
+
+        .auvo-submenu-list {
+            position        : absolute;
+            box-shadow      : $submenu-box-shadow;
+            left            : 50%;
+            right           : 50%;
+            transform       : translateX(-50%);
+            min-width       : 5.6rem;
+            top             : 90%;
+            background-color: $white;
+        }
+    }
+}

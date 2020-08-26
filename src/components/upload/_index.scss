@@ -1,0 +1,75 @@
+.auvo-upload {
+    min-width: 10rem;
+
+    >button {
+        display: block;
+        margin : 0 auto;
+    }
+}
+
+.auvo-upload-input {
+    display: none;
+}
+
+.auvo-upload-item {
+    padding      : $upload-padding-y $upload-padding-x;
+    border       : 1px solid transparent;
+    border-radius: $upload-border-radius;
+
+    &:first-child {
+        margin-top: .4rem;
+    }
+
+    &:hover {
+        border: $upload-hover-border;
+
+        .auvo-upload-item-status {
+            display: none;
+        }
+
+        .auvo-upload-remove-item {
+            display: block;
+            cursor : pointer;
+            color  : $danger;
+        }
+    }
+
+    >article {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+    }
+
+    .auvo-upload-remove-item {
+        display: none;
+    }
+
+    .auvo-upload-file-name {
+        margin: 0 .6rem;
+    }
+
+    svg {
+        width: 2rem;
+    }
+
+}
+
+.auvo-upload-dragger {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    cursor        : grabbing;
+    padding       : 1.6rem 3.2rem;
+    border        : .16rem dashed $upload-drag-border-color;
+    transition    : .2s linear;
+    border-radius : .2rem;
+
+    >span {
+        margin-top: 1rem;
+    }
+
+    &.auvo-upload-is-drag {
+        border-style    : solid;
+        background-color: $upload-drag-active-back;
+    }
+}

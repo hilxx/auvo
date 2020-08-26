@@ -1,0 +1,71 @@
+//  border 
+@mixin btn-size($padding-y, $padding-x, $font-size, $border-radius) {
+    padding      : $padding-y $padding-x;
+    font-size    : $font-size;
+    border-radius: $border-radius;
+}
+
+
+@mixin btn-color($back,
+    $color,
+    $border,
+    $back-hover:lighten($back, 6%),
+    $color-hover: $color,
+    $border-hover: lighten($border, 10%)) {
+    background-color: $back;
+    color           : $color;
+    border-color    : $border;
+
+    &:focus {
+        outline-offset: 1px;
+        outline-color : $color-hover;
+    }
+
+    &:hover {
+        background-color: $back-hover;
+        color           : $color-hover;
+        border-color    : $border-hover;
+    }
+
+    &:disabled {
+        background-color: $back;
+        color           : $color;
+        border-color    : $border;
+    }
+}
+
+@mixin zoom-in-animation($direction: 'top', $start: scale(0), $end: scale(1), $origin: top center) {
+    $transition: 300ms linear;
+
+    .zoom-in-#{$direction}-enter,
+    .zoom-in-#{$direction}-appear {
+        transform       : $start;
+        opacity         : 0;
+        transition      : $transition;
+        transform-origin: $origin;
+    }
+
+    .zoom-in-#{$direction}-appear-active,
+    .zoom-in-#{$direction}-enter-active {
+        opacity         : 1;
+        transform-origin: $origin;
+        transform       : $end;
+        transition      : $transition;
+        will-change     : auto;
+    }
+
+    .zoom-in-#{$direction}-exit {
+        transform-origin: $origin;
+        opacity         : 1;
+    }
+
+    .zoom-in-#{$direction}-exit-active {
+        opacity   : 0;
+        transform : $start;
+        transition: $transition 100ms;
+    }
+
+    .zoom-in-#{$direction}-exit-done {
+        display: none;
+    }
+}

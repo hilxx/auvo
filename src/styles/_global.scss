@@ -1,0 +1,17 @@
+.dis-none {
+    display: none !important;
+}
+
+@each $key,
+$val in $theme-colors {
+    .auvo-color-#{$key} {
+        color: $val;
+    }
+}
+
+@each $key,
+$val in $theme-colors {
+    .auvo-back-#{$key} {
+        background-color: $val;
+    }
+}

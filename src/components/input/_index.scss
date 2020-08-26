@@ -1,0 +1,110 @@
+.auvo-input-wrap {
+    width           : 100%;
+    font-family     : $input-font-family;
+    font-size       : $input-font-size;
+    font-weight     : $input-font-weight;
+    border          : $input-border-width solid $input-border-color;
+    border-radius   : $input-border-radius;
+    box-shadow      : $input-box-shadow;
+    color           : $input-color;
+    transition      : $input-transition;
+    background-color: $input-bg;
+    background-clip : padding-box;
+    display         : flex;
+    align-items     : center;
+
+    &.auvo-input-focus {
+        background-color: $input-focus-bg;
+        border-color    : $input-focus-border-color;
+        color           : $input-focus-color;
+        box-shadow      : $input-focus-box-shadow;
+        border          : none;
+
+        >span {
+            border-color: $input-focus-border-color;
+        }
+    }
+
+    &.auvo-input-sm {
+        font-size    : $input-font-size-sm;
+        border-radius: $input-border-radius-sm;
+
+        >input {
+            padding: $input-padding-y-sm $input-padding-x-sm;
+        }
+
+        >span {
+            padding      : $input-padding-y-sm $input-padding-x-sm;
+            border-radius: $input-border-radius-sm;
+        }
+    }
+
+    &.auvo-input-lg {
+        font-size    : $input-font-size-lg;
+        border-radius: $input-border-radius-lg;
+
+        >input {
+            padding: $input-padding-y-lg $input-padding-x-lg;
+        }
+
+        >span {
+            padding      : $input-padding-y-sm $input-padding-x-sm;
+            border-radius: $input-border-radius-lg;
+        }
+    }
+
+    &.auvo-input-disabled {
+        border-color    : $input-disabled-border-color;
+        cursor          : not-allowed;
+        background-color: $input-disabled-bg;
+
+        >* {
+            pointer-events: none;
+        }
+
+        >aside {
+            border-color: $input-disabled-border-color;
+        }
+    }
+
+    >* {
+        flex-shrink: 0;
+    }
+
+    >input {
+        padding         : $input-padding-y $input-padding-x;
+        border          : none;
+        outline         : none;
+        border-radius   : inherit;
+        background-color: inherit;
+        flex            : 1;
+
+        &::placeholder {
+            color: $gray-600;
+        }
+    }
+
+    >svg {
+        min-width: 2rem;
+    }
+
+    >aside {
+        border       : 0 solid $input-border-color;
+        border-radius: $input-border-radius;
+        height       : 100%;
+        text-align   : center;
+        padding      : $input-padding-y $input-padding-x;
+        display      : inline-block;
+        transition   : $input-transition;
+        color        : inherit;
+    }
+
+    .auvo-input-pre {
+        border-right-width: $input-border-width;
+    }
+
+    .auvo-input-post {
+        border-left-width: $input-border-width;
+    }
+
+}
