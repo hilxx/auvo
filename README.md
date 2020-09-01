@@ -15,3 +15,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### `yarn storybook`  
 port 6006, 打开每个组件可视化界面
 
+![image](https://github.com/hilxx/auvo/blob/master/images/auvo.png)
